@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Template 1</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="cover-page">
+    <main class="invitation-cover">
+        <div class="cover-overlay"></div>
+        <section class="cover-content" aria-label="Pembuka undangan">
+            <p class="cover-label">The Wedding of</p>
+            <h1>Wahyu & Julia</h1>
+            <p class="guest-greeting">Dear <span id="guestName">Nama Tamu</span></p>
+            <p class="cover-message">
+                Dengan penuh rasa bahagia, kami mengajak Bapak/Ibu/Saudara/i untuk turut hadir dan menjadi bagian dari hari spesial kami.
+            </p>
+            <a href="#undangan" class="btn-hero" id="openInvitation">Buka Undangan</a>
+        </section>
+    </main>
+
+    <div id="undangan" class="main-invitation">
+        <button class="music-toggle" id="musicToggle" type="button" aria-label="Putar musik latar">
+            Musik: Off
+        </button>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1>Wahyu & Julia</h1>
+                <p>Sabtu, 20 Agustus 2025</p>
+                <a href="#rsvp" class="btn-hero">Konfirmasi Kehadiran</a>
+            </div>
+        </section>
+
+        <!-- COUPLE INTRO SECTION -->
+        <section class="couple">
+            <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+            <p class="intro">
+                Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i 
+                untuk hadir dalam acara pernikahan kami
+            </p>
+        </section>
+
+        <!-- BRIDE SECTION -->
+        <section class="bride-section person-section">
+            <div class="person-detail">
+                <img src="https://unsplash.com/photos/c1sn1KDXCTg/download?force=true&w=900" alt="Mempelai Wanita">
+                <p class="person-label">Mempelai Wanita</p>
+                <h2>Julia Anindya</h2>
+                <p>Anak ke-2 dari Bapak Ahmad Santoso dan Ibu Siti Aminah</p>
+                <p>Dokter</p>
+            </div>
+        </section>
+
+        <!-- GROOM SECTION -->
+        <section class="groom-section person-section">
+            <div class="person-detail">
+                <img src="https://unsplash.com/photos/pZZhghnuA5A/download?force=true&w=900" alt="Mempelai Pria">
+                <p class="person-label">Mempelai Pria</p>
+                <h2>Wahyu Pratama</h2>
+                <p>Anak ke-1 dari Bapak Hendra Wijaya dan Ibu Rina Kartika</p>
+                <p>Software Engineer</p>
+            </div>
+        </section>
+
+        <!-- LOCATION -->
+        <section class="location">
+            <h2>Lokasi & Waktu</h2>
+            <p>Akad Nikah: 09.00 WIB</p>
+            <p>Resepsi: 11.00 - 15.00 WIB</p>
+            <p>Jl. Contoh Alamat No. 123, Kota Anda</p>
+
+            <a class="map-btn" href="https://www.google.com/maps/place/Gedung+Pertemuan+Pertamina/@-6.1777339,106.8646429,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f4ff08a15ccf:0xe4649a3d34cbc941!8m2!3d-6.1777339!4d106.8672178!16s%2Fg%2F1pp2tjm20?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Buka Google Maps</a>
+        </section>
+
+        <!-- RSVP -->
+        <section id="rsvp" class="rsvp">
+            <h2>Konfirmasi Kehadiran</h2>
+            <div class="rsvp-panel">
+                <form id="rsvpForm">
+                    <input type="text" id="nama" placeholder="Nama Anda" required>
+                    
+                    <select id="kehadiran" required>
+                        <option value="">Konfirmasi Kehadiran</option>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+
+                    <textarea id="ucapan" rows="3" placeholder="Ucapan untuk kedua mempelai (opsional)"></textarea>
+
+                    <button type="submit">Kirim RSVP</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- WISHES -->
+        <section class="wishes">
+            <h2>Ucapan Selamat</h2>
+            <div class="wishes-panel">
+                <article class="wish-card">
+                    <p>"Selamat menempuh hidup baru. Semoga menjadi keluarga yang sakinah, mawaddah, warahmah."</p>
+                    <h3>Rina & Keluarga</h3>
+                </article>
+                <article class="wish-card">
+                    <p>"Bahagia selalu untuk Wahyu dan Julia. Semoga cinta kalian tumbuh semakin indah setiap hari."</p>
+                    <h3>Andi Pratama</h3>
+                </article>
+                <article class="wish-card">
+                    <p>"Turut berbahagia atas hari spesial ini. Semoga langkah baru ini dipenuhi keberkahan."</p>
+                    <h3>Sahabat Kampus</h3>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

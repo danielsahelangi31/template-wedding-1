@@ -1,0 +1,473 @@
+/* Font */
+html {
+    scroll-behavior: smooth;
+    --hero-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=60');
+    --couple-image: url('https://unsplash.com/photos/V1IbDYcW5kc/download?force=true&w=1200');
+    --bride-section-image: url('https://unsplash.com/photos/c1sn1KDXCTg/download?force=true&w=1200');
+    --groom-section-image: url('https://unsplash.com/photos/pZZhghnuA5A/download?force=true&w=1200');
+    --location-image: url('https://unsplash.com/photos/xK6iBw6PjF4/download?force=true&w=1200');
+    --rsvp-image: url('https://unsplash.com/photos/7xEMPEGyflM/download?force=true&w=1200');
+    --wishes-image: url('https://unsplash.com/photos/YuqA-WPmdsM/download?force=true&w=1200');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    background: #fffaf1;
+    color: #444;
+}
+
+.cover-page {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.cover-page:not(.invitation-opened) {
+    overflow: hidden;
+}
+
+.invitation-cover {
+    min-height: 100vh;
+    margin: 0;
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.5)),
+        rgba(255, 215, 0, 0.16);
+}
+
+.cover-content {
+    position: relative;
+    z-index: 1;
+    width: min(88vw, 520px);
+    padding: 36px 22px;
+    color: #fff;
+}
+
+.cover-label {
+    margin: 0 0 10px;
+    color: #fff8e1;
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+
+.cover-content h1 {
+    margin: 0 0 24px;
+    font-size: clamp(2.4rem, 8vw, 4rem);
+    text-shadow: 0 0 12px #000;
+}
+
+.guest-greeting {
+    margin: 0 0 14px;
+    color: #fff8e1;
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.guest-greeting span {
+    color: #fff;
+}
+
+.cover-message {
+    margin: 0 auto 22px;
+    max-width: 440px;
+    line-height: 1.7;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.55);
+}
+
+.main-invitation {
+    background: #fffaf1;
+    margin-top: 0;
+    min-height: 100vh;
+}
+
+.music-toggle {
+    position: fixed;
+    right: calc(env(safe-area-inset-right, 0px) + 16px);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+    z-index: 20;
+    padding: 10px 16px;
+    background: #fff8e1;
+    color: #8a6508;
+    border: 1px solid #d4af37;
+    border-radius: 24px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.cover-page:not(.invitation-opened) .music-toggle {
+    display: none;
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 0;
+}
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 215, 0, 0.2);
+}
+.hero-content {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: min(88vw, 520px);
+}
+.hero-content h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-shadow: 0 0 10px #000;
+}
+.btn-hero {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #fff8e1;
+    color: #b8860b;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Couple */
+.couple {
+    padding: 60px 20px;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(255, 250, 241, 0.82), rgba(255, 250, 241, 0.88)),
+        var(--couple-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.person-section {
+    min-height: 78vh;
+    padding: 70px 20px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.bride-section {
+    background-image:
+        linear-gradient(rgba(255, 250, 241, 0.72), rgba(255, 250, 241, 0.86)),
+        var(--bride-section-image);
+}
+
+.groom-section {
+    background-image:
+        linear-gradient(rgba(255, 250, 241, 0.76), rgba(255, 250, 241, 0.88)),
+        var(--groom-section-image);
+}
+
+.person-detail {
+    width: min(90vw, 520px);
+    padding: 30px 24px;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 8px;
+}
+
+.person-detail img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #d4af37;
+}
+
+.person-label {
+    margin: 20px 0 8px;
+    color: #b8860b;
+    font-weight: bold;
+}
+
+.person-detail h2 {
+    margin: 0 0 12px;
+    color: #b8860b;
+}
+
+.person-detail p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Location */
+.location {
+    text-align: center;
+    padding: 50px 20px;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 250, 241, 0.9)),
+        var(--location-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.map-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #b8860b;
+    color: #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* RSVP */
+.rsvp {
+    padding: 50px 20px;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(255, 250, 241, 0.7), rgba(255, 250, 241, 0.84)),
+        var(--rsvp-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.rsvp-panel {
+    width: min(100%, 460px);
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 8px;
+}
+#rsvpForm {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#rsvpForm input, #rsvpForm select, #rsvpForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+#rsvpForm button {
+    padding: 12px;
+    background: #b8860b;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+/* Wishes */
+.wishes {
+    padding: 60px 20px;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(255, 250, 241, 0.72), rgba(255, 250, 241, 0.86)),
+        var(--wishes-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.wishes-panel {
+    width: min(90vw, 720px);
+    margin: 0 auto;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 8px;
+    display: grid;
+    gap: 16px;
+}
+
+.wish-card {
+    padding: 18px;
+    background: rgba(255, 250, 241, 0.72);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 8px;
+}
+
+.wish-card p {
+    margin: 0 0 12px;
+    line-height: 1.7;
+}
+
+.wish-card h3 {
+    margin: 0;
+    color: #b8860b;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .invitation-cover,
+    .hero {
+        min-height: 100svh;
+    }
+
+    .hero {
+        height: 100svh;
+    }
+
+    .couple,
+    .person-section,
+    .location,
+    .rsvp,
+    .wishes {
+        background-attachment: scroll;
+    }
+
+    .person-section {
+        min-height: auto;
+        padding: 56px 18px;
+    }
+
+    .person-detail,
+    .rsvp-panel,
+    .wishes-panel {
+        width: 100%;
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.98rem;
+    }
+
+    .cover-content {
+        width: min(92vw, 480px);
+        padding: 30px 18px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .couple {
+        padding: 48px 18px;
+    }
+
+    .person-section,
+    .location,
+    .rsvp,
+    .wishes {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .person-detail img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .music-toggle {
+        right: calc(env(safe-area-inset-right, 0px) + 14px);
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 14px);
+        max-width: calc(100vw - 28px);
+        padding: 9px 14px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 430px) {
+    .cover-content h1,
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .guest-greeting {
+        font-size: 1.15rem;
+    }
+
+    .cover-message {
+        font-size: 0.96rem;
+    }
+
+    .btn-hero,
+    .map-btn {
+        max-width: 100%;
+        padding: 11px 20px;
+        overflow-wrap: anywhere;
+    }
+
+    .couple,
+    .person-section,
+    .location,
+    .rsvp,
+    .wishes {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .person-detail,
+    .rsvp-panel,
+    .wishes-panel {
+        padding: 20px 16px;
+    }
+
+    .person-detail img {
+        width: min(168px, 58vw);
+        height: min(168px, 58vw);
+        border-width: 4px;
+    }
+
+    .person-detail h2 {
+        font-size: 1.55rem;
+    }
+
+    .person-detail p,
+    .wish-card p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1180px) {
+    .person-section {
+        min-height: 68vh;
+        padding: 64px 28px;
+    }
+
+    .person-detail {
+        width: min(72vw, 560px);
+    }
+
+    .rsvp-panel {
+        max-width: 520px;
+    }
+
+    .wishes-panel {
+        max-width: 680px;
+    }
+}
