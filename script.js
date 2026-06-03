@@ -111,7 +111,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e){
     let hadir = document.getElementById("kehadiran").value;
     let ucapan = document.getElementById("ucapan").value;
 
-    let nomorAdmin = "6281234567890"; // TODO: ganti dengan nomor WhatsApp admin, contoh: 6281234567890
+    let nomorAdmin = "6282111939057"; // TODO: ganti dengan nomor WhatsApp admin, contoh: 6281234567890
     let pesanWA = `RSVP Undangan:\nNama: ${nama}\nKehadiran: ${hadir}\nUcapan: ${ucapan}`;
 
     let url = `https://wa.me/${nomorAdmin}?text=${encodeURIComponent(pesanWA)}`;
